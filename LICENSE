@@ -1,0 +1,250 @@
+# Synthyrion Core L5 Source-Available Community and Commercial Dual-Threshold License
+
+**Version 2.3 — in effect for each download from 3 November 2026. Reviewed and approved by Synthyrion's attorney. Any revised version applies only to downloads made after it is posted.**
+
+Document ID: SYN-L5-DOC-00 | Version 2.3
+
+Copyright © 2026 Synthyrion Systems and Technologies. All rights reserved.
+
+## 1. Parties, Purpose and Acceptance
+
+**1.1 Licensor.** The licensor is **Synthyrion Systems and Technologies**, a sole proprietorship operating under a fictitious business name registered in San Bernardino County, California ("**Synthyrion**"). Notices: melissabgelfman@synthyrion.com; postal address available on request. Synthyrion has one owner. Synthyrion may act through any person it designates.
+
+**1.2 Purpose.** This Source-Available Community and Commercial Dual-Threshold License (this "**Licence**") governs the downloading, access, compilation, modification, reproduction, deployment and distribution of the Synthyrion Core L5 software (the "Software"). "L5" is part of the product name and has no other meaning. Synthyrion makes the Software free for use below two commercial boundaries (Section 4). Above either boundary, continued rights require a separate paid Commercial License (Section 4.5 and Section 5).
+
+**1.3 Source-available, not open source.** This is a source-available licence. It is not an open-source licence and is not the GNU General Public License.
+
+**1.4 Acceptance.** You accept this Licence by ticking the acceptance checkbox, next to a link to this full text, before the download starts. Synthyrion stores an acceptance record: the Licence version, its SHA-512 hash, the time and the IP address. As a backup, by downloading, installing, copying, compiling, executing or otherwise using the Software you agree to be bound by this Licence. If you do not agree, do not download, install, copy, compile or use the Software. No account is needed to download the Software (Section 3.8). An account exists only for paid purchases (Section 4.6).
+
+**1.5 Eligibility and authority.** You must be at least 18 years old. If you accept this Licence for an organisation, you confirm that you have authority to bind it, and "Licensee" then means that organisation.
+
+**1.6 Terminology.** "This Licence" and "this Agreement" mean the same thing. "Section" refers to a section of this document unless another document is named.
+
+**1.7 Status of this text.** This is Version 2.3, reviewed and approved by Synthyrion's attorney. It applies to every copy downloaded on or after 3 November 2026 (no downloads were opened under any earlier version). The controlling text is the one posted at synthyrion.com/legal/licence.html, with its SHA-512 hash published beside it. Synthyrion may post a revised version; a revised version applies only to copies downloaded after it is posted.
+
+## 2. Definitions
+
+**2.1 "Active Device"** means the maximum number of dedicated physical hardware units, embedded systems, boards, appliances, servers or production virtual machine instances that are concurrently executing the Software in a production environment on any one day, wherever they are operated and whether by Licensee or by Licensee's end customers on products supplied by Licensee. Excluded: (a) non-production development, testing, quality-assurance, staging, CI/CD, educational or evaluation environments; (b) ephemeral containers, microservices, serverless workloads and temporary processes running on an already-counted Active Device; (c) replacement units supplied under warranty or RMA while the replaced unit is out of service; and (d) cold standby units that are not executing the Software in production. Cloud or virtual instances are counted as the monthly average of concurrent instances.
+
+**2.2 "Affiliate"** means any legal entity that directly or indirectly controls, is controlled by, or is under common control with Licensee, where "control" means ownership of more than fifty percent (50%) of the voting securities or equity interests, or the power to direct the management and policies of the entity.
+
+**2.3 "Annual Attributable Revenue"** means the gross revenue billed, earned or received by Licensee and its Affiliates in a twelve (12) month period from products and services that incorporate, execute, are distributed with, are hosted using, or require the Software or any Derivative Work. Section 2.5 (financing exclusion and bundle rule) applies to it in the same way. Annual Attributable Revenue is used only for tier placement and annual true-ups under a paid agreement (Section 4.4). Cumulative Gross Revenue is used for the initial Threshold Event.
+
+**2.4 "Commercial License"** means a separate, online-purchased or written, paid licence from Synthyrion (the Commercial License Agreement, SYN-L5-DOC-01, or the Enterprise Master License Agreement, SYN-L5-DOC-02, purchased online through Stripe Checkout at synthyrion.com or, for custom Enterprise arrangements, under an Order Form, SYN-L5-DOC-11) that authorises use above the Community thresholds. Under **Track A** (Commercial Source) the Licensee's kernel and driver changes remain subject to the source-sharing rules of Section 3.5. Under **Track B** (Commercial Proprietary) the Licensee may keep its own kernel modules, drivers and hardware-abstraction bindings closed-source. The detailed terms of each Track are in SYN-L5-DOC-01 and SYN-L5-DOC-02 and the prices are in SYN-L5-DOC-06.
+
+**2.5 "Cumulative Gross Revenue"** means the aggregate, lifetime, all-time gross proceeds, fees, royalties and subscription payments billed, earned or received by Licensee and its Affiliates from products and services that incorporate, execute, are distributed with, are hosted using, or require the Software or any Derivative Work. It **excludes** equity and debt financing, grants and donations, and revenue from business lines that do not incorporate, execute or require the Software. **Bundle rule:** where the Software ships in, or is required by, a product or service, the full price of that product or service counts.
+
+**2.6 "Derivative Work"** means any modification, enhancement, port, translation, kernel module, hardware driver, hardware-abstraction-layer (HAL) binding or system extension based upon, derived from, or statically or dynamically linked into the kernel space of the Software. A standalone user-space application that runs on the unmodified Software and communicates with it only through the standard, documented system-call interfaces is not a Derivative Work for source-sharing purposes. All deployments of the Software that support such an application remain subject to the thresholds in Section 4.
+
+**2.7 "Fingerprint"** means the identifier that Synthyrion embeds in each download (including FINGERPRINT.txt inside the signed release package) so that an unauthorised copy can be traced to the download it came from.
+
+**2.8 "Licence File"** means, for a free download, the copy of this Licence (LICENSE.txt) and FINGERPRINT.txt included inside the ML-DSA-87-signed release package; and, for a paid licence, the signed licence file delivered to the Licensee's account that identifies the purchasing Licensee, tier, track and term.
+
+**2.9 "Licensee"** (or "You") means the individual, corporation, partnership, limited liability company, academic institution or other legal entity exercising rights under this Licence.
+
+**2.10 "Object Code"** means software in machine-readable, compiled, binary, executable or intermediate byte-code form.
+
+**2.11 "Restricted Jurisdiction"** means any country or region described in Section 11.2(a).
+
+**2.12 "Restricted Party"** means any person or entity described in Section 11.2(b).
+
+**2.13 "Software"** means the Synthyrion Core L5 software, including source code, object code, headers, kernel modules, device interfaces, build scripts, firmware images and associated technical documentation provided by Synthyrion.
+
+**2.14 "Source Code"** means the preferred, human-readable form of the Software and Derivative Works for making modifications, including source files, interface-definition files, scripts used to control compilation and installation, and configuration files.
+
+**2.15 "Threshold Event"** means Licensee, together with its Affiliates, first reaching either (a) US$100,000.00 in Cumulative Gross Revenue, or (b) the 101st Active Device. The "5x Level" means 501 Active Devices or US$500,000.00 in Cumulative Gross Revenue.
+
+## 3. Community Licence Grant and Reciprocal Source-Sharing
+
+**3.1 Grant.** Subject to Licensee's compliance with this Licence, and as long as no Threshold Event has occurred without a Commercial License (or its conversion window under Section 5 is still running), Synthyrion grants Licensee a worldwide, non-exclusive, royalty-free, non-sublicensable licence, under Synthyrion's copyrights and patent rights in the Software, to do what Sections 3.2 to 3.5 allow. The grant is not transferable, except by redistribution under Sections 3.4 to 3.6.
+
+**3.2 Use.** Licensee may download, install, copy, compile, execute, test and use the Software for any lawful personal, educational, research, evaluation or development purpose, and in production on no more than one hundred (100) Active Devices while Licensee's Cumulative Gross Revenue is below US$100,000.00.
+
+**3.3 Modification.** Licensee may modify the Software and create Derivative Works, subject to Sections 3.5 and 3.7.
+
+**3.4 Redistribution of the Software.** Licensee may redistribute the Software, in Source Code or Object Code, only (a) under this same Licence; (b) with all copyright, licence and warranty-disclaimer notices, all Fingerprints (FINGERPRINT.txt) and the Licence File intact; (c) with a copy of this Licence presented to the recipient before delivery, so that the recipient accepts it as in Section 1.4; and (d) not to any Restricted Party and not to or in any Restricted Jurisdiction.
+
+**3.5 Derivative Works.** If Licensee distributes a Derivative Work to any third party (in Source Code or Object Code), Licensee must: (a) mark the modified files with prominent notices stating that Licensee changed them, and the date; (b) license the entire Derivative Work, including all kernel-space modules, drivers, HAL bindings and linked kernel extensions, under this Licence, at no additional charge; and (c) provide complete, corresponding, machine-readable Source Code for the entire Derivative Work, on a medium customarily used for software interchange or through a readily accessible online address, free of charge. Section 3.5 does not apply to a Licensee holding a Track B Commercial License, to the extent that Commercial License allows closed-source modules.
+
+**3.6 Every recipient is bound; the licence comes from Synthyrion.** Every recipient of the Software or a Derivative Work is bound by this Licence, including its export terms (Section 11), and receives its licence directly from Synthyrion on the terms of this Licence. Licensee cannot grant, and does not purport to grant, any other licence. A recipient who does not accept this Licence has no right to use, copy or distribute the Software.
+
+**3.7 No further restrictions, except export and sanctions.** Licensee may not add any restriction to the recipient's exercise of the rights granted by this Licence, except the restrictions needed to comply with export-control and sanctions law (Section 11).
+
+**3.8 Fingerprints, Licence Files and downloads.** The Software is freely downloadable without an account. Each free download is delivered as an ML-DSA-87-signed release package containing a per-download Fingerprint (FINGERPRINT.txt) and a copy of this Licence (LICENSE.txt); a paid purchase additionally delivers a signed Licence File naming the purchasing Licensee. Synthyrion records, for each download, the Licence version, its SHA-512 hash, the time, the IP address and the Fingerprint identifier. Licensee must not remove, alter, disguise or disable a Fingerprint (FINGERPRINT.txt), package signature or Licence File, in any copy or Derivative Work. Doing so is a material breach. Synthyrion's Privacy Policy (W2) describes how Synthyrion uses these records.
+
+**3.9 Software shipped inside Licensee's products.** Licensee may ship the Software in Object Code inside its own products to its own end customers. Each end customer is a recipient under Section 3.6, may run the Software on that product only, and must be presented with this Licence. Such units count as Active Devices (Section 2.1).
+
+**3.10 Attribution.** Licensee must include this notice in its product documentation, and in an "about" or legal-notice screen where the product has one: "Synthyrion Core L5 is copyright © 2026 Synthyrion Systems and Technologies and is licensed under the Synthyrion Core L5 Community & Commercial License." Where a product has no documentation and no screen, no attribution is required.
+
+**3.11 No telemetry required; no remote disablement.** This Licence does not require Licensee to send Synthyrion any telemetry; Licensee keeps its own deployment records (Section 6.4). Synthyrion will not remotely disable, or distribute a version of the Software that stops booting because of, a licence check.
+
+**3.12 Patent defence.** If Licensee starts patent litigation against Synthyrion or any contributor (including a cross-claim or counterclaim) alleging that the Software or a Derivative Work infringes a patent, all patent licences and usage rights granted to Licensee under this Licence end on the date the litigation is filed.
+
+**3.13 Contributions and feedback.** A contribution to the Software, other than feedback, is accepted only under the Contributor License Agreement (SYN-L5-DOC-10). Licensee grants Synthyrion a perpetual, worldwide, royalty-free licence to use any suggestions or feedback it sends without obligation to Licensee.
+
+**3.14 Third-party components.** The Software may include or depend on third-party components under their own licences, listed in the Third-Party Notices (SYN-L5-DOC-19). Those licences govern those components.
+
+**3.15 Reserved rights.** Synthyrion reserves all rights not expressly granted.
+
+## 4. Commercial Thresholds and Mandatory Licensing
+
+**4.1 The two boundaries.** The free Community licence is conditioned on Licensee, together with its Affiliates, staying below **both** of the following: (a) **Cumulative Gross Revenue** of US$100,000.00 (US$0.00 to US$99,999.99 is permitted); and (b) 100 Active Devices (1 to 100 is permitted). Reaching US$100,000.00 in Cumulative Gross Revenue, or the 101st Active Device, is a Threshold Event.
+
+**4.2 Summary.**
+
+| **Stage** | **Cumulative Gross Revenue** | **Active Devices** | **Result** |
+|---|---|---|---|
+| Community Licence | US$0.00 to US$99,999.99 | 1 to 100 | Free, on this Licence |
+| Courtesy notice (80%) | US$80,000.00 | 80 | Notice requested (Section 6.1) |
+| Threshold Event | US$100,000.00 or more | 101 or more | Conversion window starts (Section 5) |
+| 5x Level | US$500,000.00 or more | 501 or more | Shorter window (Section 5.3) |
+
+**4.3 Measuring.** Revenue and device counts are measured for Licensee together with its Affiliates, using the definitions in Section 2. Foreign-currency amounts are converted to US dollars at the U.S. dollar exchange rate published by the Board of Governors of the Federal Reserve System (H.10) for the last business day of the period.
+
+**4.4 From the initial trigger to annual tier placement.** Lifetime Cumulative Gross Revenue and the Active Device count decide only whether the Community licence ends. After conversion, the paid tier (Startup, Growth or Enterprise) and the annual true-up are set by Annual Attributable Revenue for the preceding twelve (12) months and the maximum concurrent Active Devices, and the higher tier produced by either measure controls, as stated in SYN-L5-DOC-06.
+
+**4.5 Mandatory Commercial License.** After a Threshold Event, Licensee's rights under this Licence continue only for the conversion window in Section 5. Use, reproduction, deployment, execution or distribution of the Software after the Conversion Deadline (Section 5.1) requires a fully paid Commercial License.
+
+**4.6 Paid licences are personal; accounts exist only for paid purchases.** A Commercial License is bought online at synthyrion.com through Stripe Checkout (where the Stripe Checkout confirmation and receipt serve as the Order Form record) or, for custom Enterprise arrangements, by a signed Order Form (SYN-L5-DOC-11). A sign-in account exists only for paid purchases and payment processing. A paid licence is personal to the purchasing Licensee: it is non-transferable, non-assignable (including by merger or change of control, without Synthyrion's written consent) and non-sublicensable, and may not be shared, lent, resold or given away. The licence key, the Licence File and any paid tools may be used only by the purchasing Licensee and its own employees and contractors working for it. The Licensee may ship the Software in Object Code inside its own products to its own end customers, who may run it on that product only.
+
+## 5. Commercial Conversion Timing and Rolling Grace Period
+
+**5.1 Standard window (60 days).** After a Threshold Event, Licensee has a sixty (60) calendar day transition window, starting on the day the Threshold Event first occurs ("**Day 0**"). Licensee must (a) notify Synthyrion in writing within thirty (30) calendar days ("**Day 30**"); and (b) buy a Commercial License online through Stripe Checkout (or sign an Order Form) and pay the initial fees within sixty (60) calendar days ("**Day 60**"). The last day of the window, as changed by Sections 5.3 and 5.4, is the "**Conversion Deadline**".
+
+**5.2 Content of the notice.** The notice must state the date and kind of the Threshold Event, the Active Device count, the Cumulative Gross Revenue, the Track (A or B) Licensee wants, and a contact. Notice is given as in Section 5.6.
+
+**5.3 Shorter window at the 5x Level.** If Licensee reaches the 5x Level before Day 60, the Conversion Deadline becomes the earlier of Day 60 and thirty (30) calendar days after the 5x Level is reached, and the notice is due within ten (10) days after the 5x Level is reached or on Day 30, whichever is earlier.
+
+**5.4 Year-end holiday safe harbour.** If the Conversion Deadline falls between December 15 and January 5 (inclusive), it moves to 11:59 p.m. Pacific Time on January 15. Use during the extension is permitted on the terms of this Licence.
+
+**5.5 Use during the window.** During the window and any extension, Licensee may keep using the Software under Section 3, but may not add new production Active Devices beyond the 5x Level.
+
+**5.6 Procedure.** Notices and licensing inquiries go to melissabgelfman@synthyrion.com or to Synthyrion's address in Section 1.1. A paid licence is bought online at synthyrion.com through Stripe Checkout (Section 4.6) or, for custom Enterprise arrangements, by a signed Order Form (SYN-L5-DOC-11).
+
+**5.7 After the Conversion Deadline.** If Licensee has not bought a Commercial License by the Conversion Deadline, all rights under Section 3 end automatically (Section 10.2).
+
+## 6. Reporting, Compliance Certification and Audit
+
+**6.1 Courtesy notice at 80%.** Licensee is requested to email melissabgelfman@synthyrion.com within thirty (30) days after reaching US$80,000.00 in Cumulative Gross Revenue or 80 Active Devices, so that conversion can be planned. This request is a courtesy. Not sending it is not a breach and does not delay or extend any date in Section 5.
+
+**6.2 Officer's Compliance Certification, Community.** Once per calendar year at most, on Synthyrion's written request, a Licensee that deploys the Software in production in a commercial setting must, within thirty (30) calendar days, email melissabgelfman@synthyrion.com a signed Officer's Compliance Certificate (Exhibit A, Part 1, in SYN-L5-DOC-05, Section 5.7) for the preceding twelve (12) months, stating (a) the maximum concurrent production Active Devices, (b) the Cumulative Gross Revenue bracket, and (c) compliance with Section 3.5. Late delivery is curable under Section 10.1.
+
+**6.3 Officer's Compliance Certification, paid.** A paid Licensee delivers the annual tier true-up declaration (Exhibit A, Part 2) thirty (30) calendar days before its renewal date, as stated in SYN-L5-DOC-01.
+
+**6.4 Records.** Licensee keeps accurate books, records, deployment registries and financial documents reasonably needed to verify compliance with the thresholds for at least three (3) years after each calendar year of use. No telemetry is required.
+
+**6.5 Audit safeguards.** Synthyrion may audit Licensee's relevant records, device counts and revenue calculations, on these conditions: (a) the scope is limited to records reasonably needed to verify compliance with this Licence; (b) at most once in any twelve (12) month period; (c) at least thirty (30) calendar days' written notice; (d) during normal business hours, without unreasonably disrupting operations; and (e) the independent auditor signs a customary confidentiality agreement (the form is SYN-L5-DOC-13).
+
+**6.6 Audit consequences.** If an audit shows that Licensee passed a threshold without a Commercial License by the Conversion Deadline, Licensee pays the licence fees that were due plus interest at the lesser of one percent (1%) per month and the maximum rate allowed by law. If the understatement is more than ten percent (10%), Licensee also pays Synthyrion's reasonable audit costs.
+
+**6.7 Receipt is not waiver.** Receiving any notice, certificate or report does not waive any right. Synthyrion has no duty to review it, and silence is not acceptance.
+
+## 7. Intellectual Property and Title
+
+**7.1 Ownership.** Synthyrion and its licensors keep all right, title and interest in the Software, including copyrights, patents, patent applications, trademarks and service marks.
+
+**7.2 No implied licences.** No right is granted by implication, estoppel or otherwise, except the express permissions of this Licence.
+
+**7.3 Trademarks.** This Licence grants no right to use the names, logos or marks of Synthyrion, including Synthyrion™ and Synthyrion Core L5™, except as the Trademark and Brand Usage Policy (SYN-L5-DOC-09) allows.
+
+**7.4 Copyright notice.** The copyright notice for the Software is "Copyright © 2026 Synthyrion Systems and Technologies. All rights reserved." That notice is consistent with this being a source-available licence.
+
+## 8. Disclaimer of Warranties; Status of the Software; High-Risk Use
+
+**8.1 Disclaimer.** To the maximum extent permitted by law, the Software is provided "AS IS" and "AS AVAILABLE", without warranty of any kind, express or implied, including any warranty of merchantability, fitness for a particular purpose, title, non-infringement or accuracy, and including any warranty that the Software is secure, error-free or uninterrupted. Licensee assumes all risk of selecting, installing, running and relying on the Software.
+
+**8.2 What the Software is.** Synthyrion Core L5 is a capability-based microkernel written in Rust, with versions for x86-64 (Intel and AMD), AArch32 (32-bit Arm), AArch64 (64-bit Arm) and RISC-V 64. Hardware evidence exists for x86-64; the AArch32, AArch64 and RISC-V 64 versions run in emulation (QEMU) only. It is under active development. Its feature status is published at synthyrion.com, with the strength of each piece of evidence (tested, bounded, panic-free or functionally proven; on host, virtual machine or hardware). It has no safety, security or government certification. There is no whole-kernel functional-correctness proof. It is not FIPS 140-3 validated.
+
+**8.3 High-risk use.** The Software is not certified for, and must not be relied on in, any life-, safety- or mission-critical system (including medical devices, aircraft, vehicles, nuclear facilities, weapons or critical infrastructure) unless a separate written agreement with Synthyrion expressly covers that use.
+
+**8.4 No support.** Synthyrion has no support obligation, service levels, response times or uptime commitments under this Licence.
+
+## 9. Limitation of Liability
+
+**9.1 Exclusion.** To the maximum extent permitted by law, neither party is liable to the other for indirect, incidental, special, consequential or punitive damages (including loss of data, revenue, profits or business, or business interruption), however caused and on any theory, arising out of this Licence or the Software, even if told of the possibility.
+
+**9.2 Cap.** Synthyrion's total liability arising out of or relating to this Licence or the Software is limited to one hundred US dollars (US$100). For a paid Commercial License the cap is the fees Licensee paid in the twelve (12) months before the claim, as stated in that agreement. This cap does not limit Licensee's obligation to pay fees due.
+
+**9.3 What is never limited.** Nothing limits liability that cannot be limited by law, including for fraud, wilful misconduct, or death or personal injury caused by negligence.
+
+**9.4 Basis of the bargain.** The Software is offered free of charge in reliance on Sections 8 and 9.
+
+## 10. Termination and Notice-and-Cure
+
+**10.1 Notice and cure (non-wilful breaches).** For a non-monetary, inadvertent breach (for example an accidentally omitted copyright notice, an attribution error, or a late certificate under Section 6.2), Synthyrion will give written notice. If Licensee cures the breach within thirty (30) calendar days after receiving the notice, all rights continue. This Section 10.1 does not apply to any export or sanctions violation (Section 11.6), to removing or altering a Fingerprint or Licence File, or to a breach of Section 3.4(d).
+
+**10.2 Immediate termination.** This Licence ends immediately and automatically, without a cure period, on (a) intentional failure to report a Threshold Event; (b) wilful evasion of the commercial licensing requirement; (c) use or distribution past the Conversion Deadline; (d) any export or sanctions violation, or a failure to stop unauthorised sanctioned access on discovery; (e) removal or alteration of a Fingerprint or Licence File; or (f) the patent-litigation event in Section 3.12 (as to the patent licences).
+
+**10.3 Suspension.** Synthyrion may suspend access to downloads and paid services immediately where Section 11.5 allows.
+
+**10.4 Effect of termination.** On termination Licensee must stop reproducing, compiling, executing, linking, distributing and commercially using the Software and destroy all copies in its possession or control.
+
+**10.5 Units already shipped; recipients.** End customers who received the Software in good faith inside Licensee's products, and other recipients who received it in good faith under Section 3.6, keep their own licence from Synthyrion, and may keep running the copies they have, as long as they comply with this Licence and are not Restricted Parties.
+
+**10.6 Survival.** Sections 2, 6.4 to 6.7, 7, 8, 9, 10, 11, 12, 13 and 14 survive termination.
+
+## 11. Export Controls and Sanctions
+
+**11.1 Export notice.** The Software contains encryption and is subject to the U.S. Export Administration Regulations (EAR). Its export classification is pending; until it is confirmed, treat it as ECCN 5D002. See SYN-L5-DOC-20 and the Export Notice (W8).
+
+**11.2 Prohibited transfers.** Licensee will not export, re-export, transfer or provide the Software, directly or indirectly:
+
+(a) to any country or region subject to comprehensive U.S. sanctions or embargo or website access block (as of drafting: Cuba, Iran, North Korea, Syria, and the Crimea, Sevastopol, so-called Donetsk People's Republic and Luhansk People's Republic regions of Ukraine; the list changes and the current OFAC/BIS list controls);
+
+(b) to any person or entity on a U.S. restricted-party list, including the OFAC SDN List, the BIS Entity List, Denied Persons List, Unverified List and Military End-User List (the Consolidated Screening List), or any entity owned 50 percent or more by one or more such persons;
+
+(c) for any military end use or to a military end user where the EAR restricts it (15 C.F.R. § 744.21), for any military-intelligence end use or end user (15 C.F.R. § 744.22), or for nuclear, chemical, biological or missile end uses (15 C.F.R. Part 744); or
+
+(d) to Russia or Belarus, or in violation of the EAR's restrictions on Russia and Belarus (15 C.F.R. Part 746).
+
+**11.3 Representations.** Licensee represents and warrants that it is not located in, organised under the laws of, or ordinarily resident in a Restricted Jurisdiction, is not a Restricted Party, and is not owned or controlled by one. Licensee is responsible for obtaining any government authorisation it needs; this does not relieve Synthyrion of its own obligations as exporter.
+
+**11.4 Screening and information.** Licensee will re-screen every recipient before redistributing the Software (Section 3.4), and will give Synthyrion end-use and end-user information on request and notify it of changes. Synthyrion blocks downloads from restricted jurisdictions and records each download (Section 3.8). Paid purchases are screened against the Consolidated Screening List at checkout.
+
+**11.5 Suspension and termination.** Synthyrion may suspend or terminate access immediately, without a cure period, if it believes a violation of this Section 11 has occurred.
+
+**11.6 No cure.** Export violations are never "administrative breaches". Section 10.1 never applies to them.
+
+**11.7 Records.** Synthyrion keeps screening, acceptance and download records for ten (10) years.
+
+## 12. Governing Law, Venue and Remedies
+
+**12.1 Governing law.** This agreement is governed by the laws of the State of California, excluding its conflict-of-laws rules. The United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transactions Act do not apply.
+
+**12.2 Venue.** Exclusive venue: the Superior Court of California, County of San Bernardino, or the United States District Court for the Central District of California. Each party consents to personal jurisdiction there.
+
+**12.3 Equitable relief.** Unauthorised use or distribution of the Software beyond the thresholds, or in breach of the source-sharing or export terms, would cause irreparable harm for which damages are inadequate. Synthyrion may seek injunctive relief and specific performance in any court of competent jurisdiction, to the extent permitted by law, with any bond as the court decides.
+
+**12.4 Attorneys' fees.** In any action to enforce or interpret this Licence, the prevailing party recovers its reasonable attorneys' fees and costs.
+
+## 13. Good-Faith Interpretation
+
+**13.1 Intent.** Synthyrion's intent is to encourage research, adoption and growth while keeping a transparent boundary for commercial-scale use. The parties will act in good faith when applying threshold calculations, device counts and revenue attribution, and will resolve ambiguity in a commercially reasonable way, not an arbitrary or punitive one.
+
+## 14. General
+
+**14.1 Notices.** Notices to Synthyrion go to melissabgelfman@synthyrion.com and the postal address in Section 1.1. Notices to Licensee go to the email address Licensee gave when it accepted this Licence or bought a paid licence, and to its postal address if given. Email notice is effective on sending, unless the sender receives a bounce message.
+
+**14.2 Assignment.** Synthyrion may assign or transfer this agreement, and all of its rights in the Software, including copyrights and trademarks, to any successor entity (including a corporation, a limited liability company or a trust) without the Licensee's consent. Notice of the assignment will be posted at synthyrion.com. Licensee's own rights: Under the free Community licence, Licensee's rights pass only through redistribution under Sections 3.4 to 3.6; Licensee may not otherwise assign them. A paid licence is governed by Section 4.6. A purported assignment in breach of this Section is void.
+
+**14.3 Licence updates.** Synthyrion may publish a new version of this Licence. A new version applies only to Software downloaded, or paid licences bought, after the new version's date. Existing downloads stay under the version accepted.
+
+**14.4 Entire agreement and precedence.** This Licence is the complete agreement on the Community licence. If Licensee buys a Commercial License, the documents are ranked as stated in the Master Document Control and Precedence Registry (SYN-L5-DOC-00-INDEX), which is incorporated into this Licence by reference.
+
+**14.5 Severability.** If a provision is held invalid or unenforceable, it is modified to the minimum extent needed to make it enforceable, and the rest continues in force.
+
+**14.6 No waiver.** Failing to enforce a provision is not a waiver of later enforcement.
+
+**14.7 Relationship.** The parties are independent. This Licence creates no partnership, joint venture, agency, employment or franchise.
+
+**14.8 U.S. Government rights.** The Software is "commercial computer software" (FAR 12.212; DFARS 227.7202). Government rights are only those granted by this Licence.
+
+**14.9 Electronic records.** The parties agree to contract electronically, and Synthyrion's acceptance record (Section 1.4) is evidence of acceptance.
+
+**14.10 Third-party beneficiaries.** There are none. Each recipient's rights come from its own licence from Synthyrion (Section 3.6).
+
+## 15. Licensor and Contact
+
+Licensor: **Synthyrion Systems and Technologies**, a sole proprietorship operating under a fictitious business name registered in San Bernardino County, California ("**Synthyrion**"). Notices: melissabgelfman@synthyrion.com; postal address available on request.
+
+Licensing and notices: melissabgelfman@synthyrion.com. Security reports: melissabgelfman@synthyrion.com.

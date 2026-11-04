@@ -1,0 +1,2 @@
+# Keep every file byte-for-byte as staged (the licence must stay byte-identical on any platform).
+* -text
