@@ -1,4 +1,4 @@
-<p align="center"><img src="brand/lockup-1200.jpg" alt="Synthyrion Systems and Technologies" width="600"></p>
+<p align="center"><img src="brand/company-horizontal-960.jpg" alt="Synthyrion Systems and Technologies" width="600"></p>
 
 # Synthyrion Core L5
 
