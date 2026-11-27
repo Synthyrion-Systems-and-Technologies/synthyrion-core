@@ -1,4 +1,4 @@
-> Snapshot of the matching page on https://synthyrion.com (site build 20261127_refresh_0368426a0_r3, source commit 0368426a0; figures carry the date they were measured or counted). Release 0.1.3 is withdrawn and no download is available now. The website is the current version; this copy is refreshed with each site refresh.
+> Snapshot of the matching page on https://synthyrion.com (site build 20261127_main_b4ed2c1cd, source commit b4ed2c1cd; figures carry the date they were measured or counted). Release 0.1.3 is withdrawn and no download is available now. The website is the current version; this copy is refreshed with each site refresh.
 
 # Platforms, and what ran where
 
