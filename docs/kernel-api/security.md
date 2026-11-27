@@ -28,33 +28,24 @@ Strength words are the four used on the Proofs page: tested, bounded, panic-free
 * The kernel's own code: it is small compared with the system on top of it, but it is not proven correct.
 * The root task, which receives every initial capability. It is as trusted as the system builder makes it.
 
-## 3. Cryptography in the kernel
+## 3. Cryptography
 
-The kernel uses cryptography for **authentication and integrity only**. It contains no cipher, no authenticated encryption and no key agreement, and a test fails the build if a confidentiality primitive enters the kernel's dependency closure.
+### What the signed 0.1.3 image links
 
-| use | primitive | notes |
-|---|---|---|
-| capability sealing | HMAC-SHA-512 (RFC 2104, RFC 4231), the tag truncated to 32 bytes | verified in constant time over fixed-size tags |
-| digests | SHA-512 (FIPS 180-4) | |
-| image identity | ML-DSA-87 (FIPS 204) signature, checked at boot | post-quantum signature |
-| key vault operations | the vault authenticates a 40-byte request binding the caller's identity and four words | the key never leaves the kernel; `vault_op` returns only a count |
+The image links one cryptographic crate, `synthyrion_kcrypto`: SHA-512 (the crate also carries the 384-bit variant of SHA-2) and HMAC-SHA-512. The kernel uses them to seal capabilities (HMAC-SHA-512, the tag truncated to 32 bytes) and to compare tags in constant time. The image contains **no cipher** and **verifies no signature at boot**: the dependency tree of its loader has no signature crate (checked with `cargo tree` on the source in the package, 2026-11-10).
 
-### Post-quantum position
+### What the source export also carries, not linked into the signed image
 
-The project's cryptographic rules: key-establishment and signatures are post-quantum only, with no classical-plus-post-quantum hybrids in the project's own protocols. In the code:
+| component | what it is | symmetric key | notes |
+|---|---|---|---|
+| `synthyrion_mldsa` | ML-DSA-87 (FIPS 204) | none | used by `tools/synthyrion_sigcheck`, the signature checker |
+| `synthyrion_crypto` | SHA-2, SHA-3/SHAKE, HMAC; ChaCha20 (RFC 8439) with an HMAC-SHA-512 encrypt-then-MAC AEAD; a classical Ed25519 module | ChaCha20: 256 bits | nothing outside tests calls the Ed25519 module; the key vault's approvals moved to ML-DSA-87 |
+| `keyvault` | the key vault: HMAC-SHA-512 tags, ML-DSA-87 signing seeds, SEAL512 sealing (SHAKE256 keystream, HMAC-SHA-512 tag) | 512 bits | read-only opener for old 256-bit blobs; as of 2026-11-27 |
+| `measured_boot` | seals a secret to a boot measurement with SEAL512 (format 2); format-1 blobs (ChaCha20, 256-bit key) can only be opened read-only | 512 bits | as of 2026-11-27 |
 
-* **Signatures:** ML-DSA-87 (FIPS 204). A hash-based signature (SLH-DSA, FIPS 205) is also implemented in the wider system.
-* **Key establishment:** ML-KEM-1024 (FIPS 203), in the wider system. The kernel itself performs no key establishment.
-* **Hashes:** SHA-512 and SHA3-512. A 256-bit hash output is below the project's post-quantum floor, which is why the project uses 512-bit outputs.
+### The floor, and where this does not meet it
 
-### What is not post-quantum, or not yet at the floor
-
-Honesty requires this list:
-
-* The capability seal is an HMAC-SHA-512 **truncated to 32 bytes**: a 256-bit tag. That is a forgery-resistance margin chosen for the seal's role, not the project's 512-bit floor for keys and hashes, and the kernel-side seal key is in kernel memory.
-* Some symmetric components elsewhere in the system (for example the authenticated encryption of the key-vault's files) use 256-bit-key ciphers that are below the project's 512-bit symmetric floor and are scheduled to migrate. They are not in the kernel.
-* The wider system may use conventional TLS to read public web pages, because most of the internet offers nothing else; what it receives is treated as data to be made post-quantum locally. No login, personal data or own-protocol traffic uses it. None of that code is in the kernel.
-* **Nothing in this documentation is a FIPS 140-3 validation claim.** The software is not FIPS 140-3 validated.
+The project's rule is: symmetric keys of at least 512 bits, post-quantum signatures and key establishment, hashes of SHA-512 or stronger, and no classical-plus-post-quantum hybrids in its own protocols. ChaCha20 takes a 256-bit key and is below the symmetric floor. The key vault and measured boot were migrated to SEAL512 (512-bit keys) and now only open old blobs read-only. The crypto-floor check run on 2026-11-27 (source commit 0368426a0) still lists 34 sub-512-bit symmetric sites in 5 files: the TLS 1.3, TLS-session and Tor onion code (the peer fixes a 256-bit cipher), the legacy sealing primitive kept for those users, and the conformance-test runner. The web store (separate from the kernel package) seals its own files with a first-party construction under 512-bit keys: a SHAKE256 keystream and an HMAC-SHA-512 tag; it is not a standardised mode and has had no independent review. SEAL512 is the project's own construction from standard primitives; no standard cipher has a 512-bit key, and SEAL512 has had no independent review. The ML-KEM-1024 (FIPS 203) key encapsulation exists in the development tree and is not part of this package; the kernel performs no key establishment.
 
 ## 4. Side channels and time protection
 
