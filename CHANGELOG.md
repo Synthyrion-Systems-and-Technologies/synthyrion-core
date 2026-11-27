@@ -4,6 +4,10 @@ Releases are published at https://synthyrion.com. Each release is signed with ML
 
 Release key SHA-512: `8f953d3e91caf5d8e316134dfa5f1d1e7cad744a4b02afaa22e0f0f084fcdcd81e445c646982f1f6fa9d1cad635f9c5a67c2187fde66129122c1a9ee0f1ec5b1`
 
+## Status as of 2026-11-27
+
+**No release is available.** Release 0.1.3 was withdrawn and the next version is being prepared. The website's release notes (https://synthyrion.com/core/changelog.html) start at 0.1.2, record 0.1.3 (four fixed defects in the kernel's isolation checks, present in 0.1.2) and list the changes on the main line since, which are in no release. They state that 0.1.3 was the first download. The entries for 0.1.0 and 0.1.1 below are kept as they were first published in this repository on 2026-11-04; the website is the current record where the two differ.
+
 ## 0.1.1 (2026-11-04)
 
 The release self-test image for x86-64 UEFI, rebuilt from a newer kernel commit than 0.1.0 (feature rows moved; the per-row status and limits are in docs/status-features.md).

@@ -14,15 +14,15 @@ This repository holds the **licence, the documentation and the explanations**: w
 
 ## Get it and verify it
 
-1. Download the current release from https://synthyrion.com (Get it). The package contains the UEFI loader image in raw, qcow2, VHDX and VMDK/OVA forms, launchers, the clean source export, `SHA512SUMS`, a CycloneDX SBOM, and an ML-DSA-87 signature (`.sig`) for every file.
+1. **No release is available at the moment:** the 0.1.3 download was withdrawn and the next version is being prepared (https://synthyrion.com/core/downloads.html). When a release is available, download it from https://synthyrion.com (Get it). A package contains the UEFI loader image in raw, qcow2, VHDX and VMDK/OVA forms, launchers, the clean source export, `SHA512SUMS`, a CycloneDX SBOM, and an ML-DSA-87 signature (`.sig`) for every file.
 2. Check `SHA512SUMS` against the sums published next to the download.
 3. Verify the signatures: each `.sig` is ML-DSA-87 (FIPS 204) over the SHA-512 of the file, context `SYNTHYRION-RELEASE-SIGN-1`. The public key is `synthyrion_release_anchor.bin` in the package. Compare its SHA-512 with the release key digest published on synthyrion.com (and in [CHANGELOG.md](CHANGELOG.md)), not only with the copy in the package. The source export contains a verifier you can build yourself (`tools/synthyrion_sigcheck`, no third-party crates).
 
 Release key SHA-512: `8f953d3e91caf5d8e316134dfa5f1d1e7cad744a4b02afaa22e0f0f084fcdcd81e445c646982f1f6fa9d1cad635f9c5a67c2187fde66129122c1a9ee0f1ec5b1`
 
-## What the current release is
+## What the last release was
 
-The 0.1.1 release is a **boot self-test image**: it boots, runs the syscall-gate checks and prints a PASS or FAIL verdict, then idles. It has no desktop, network stack, storage or drivers; those are not in this release. Its boot evidence is virtual-machine evidence (QEMU with KVM and OVMF), not hardware evidence. See [CHANGELOG.md](CHANGELOG.md) and [docs/status-features.md](docs/status-features.md).
+The last release, 0.1.3 (withdrawn on 2026-11-10; nothing can be downloaded now), was, like the builds before it, a **boot self-test image**: it boots, runs the syscall-gate checks and prints a PASS or FAIL verdict, then idles. It has no desktop, network stack, storage or drivers; those were not in it. Its boot evidence is virtual-machine evidence (QEMU with KVM and OVMF), not hardware evidence. See [CHANGELOG.md](CHANGELOG.md) and [docs/status-features.md](docs/status-features.md).
 
 ## Documentation
 
@@ -36,7 +36,7 @@ Start at [docs/README.md](docs/README.md).
 
 ## Cryptography
 
-ML-KEM-1024 (FIPS 203) key encapsulation; ML-DSA-87 (FIPS 204) signatures; SHA-512 and SHA3-512 hashing; a Synthyrion-designed authenticated cipher on the Keccak-p[1600] permutation with a 512-bit key (a non-standard cipher, not NIST-approved); ChaCha20 remains in two internal components and is scheduled for replacement. No AES, RSA, Ed25519, ECDSA or hybrid schemes. Nothing is FIPS-validated.
+ML-KEM-1024 (FIPS 203) key encapsulation; ML-DSA-87 (FIPS 204) signatures; SHA-512 and SHA3-512 hashing; SEAL512, a Synthyrion-built sealing construction (a SHAKE256 keystream and an HMAC-SHA-512 tag under 512-bit keys; not a standardised mode, not NIST-approved, no independent review), used by the key vault and by measured boot. ChaCha20 (256-bit key) is below the project's 512-bit symmetric floor: as of 2026-11-27 (source commit 0368426a0) the crypto-floor check lists 34 remaining sub-512-bit symmetric sites in 5 files, all in outside-interoperability code (TLS 1.3, TLS sessions, the Tor onion protocol, where the peer fixes the cipher), the legacy sealing primitive kept for those users, and the conformance-test runner; the key vault and measured boot keep only a read-only opener for old 256-bit blobs. The kernel uses no AES, RSA, Ed25519 or ECDSA and no hybrid scheme; the source export also carries a classical Ed25519 module that nothing outside tests calls. Nothing is FIPS-validated.
 
 ## Licence
 
