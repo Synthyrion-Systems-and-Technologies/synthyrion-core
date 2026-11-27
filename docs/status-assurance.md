@@ -1,4 +1,4 @@
-> Snapshot of the matching page on https://synthyrion.com (site build 20261127_refresh_0368426a0_r3, source commit 0368426a0; figures carry the date they were measured or counted). Release 0.1.3 is withdrawn and no download is available now. The website is the current version; this copy is refreshed with each site refresh.
+> Snapshot of the matching page on https://synthyrion.com (site build 20261127_main_b4ed2c1cd, source commit b4ed2c1cd; figures carry the date they were measured or counted). Release 0.1.3 is withdrawn and no download is available now. The website is the current version; this copy is refreshed with each site refresh.
 
 # Assurance goals
 
@@ -18,13 +18,13 @@ The assurances Synthyrion Core L5 sets out to achieve, what is achieved so far, 
 
 0 functional-correctness proofs measured 2026-11-09
 
-5,527 of 5,659 kernel functions proven panic-free recorded 2026-11-26, re-measured at the final run
+5,524 of 5,656 functions proven panic-free across the census (kernel, driver, UI and file-system crates) recorded 2026-11-26, re-measured at the final run
 
 1,285 Isabelle theorem statements counted 2026-11-27
 
 303 Lean theorem declarations counted 2026-11-27
 
-3,220 of 5,143 functions with a time bound measured 2026-11-26; loop bounds: 148 source-bound, 8 behavioural, 54 MIR-bound, 30 taken on trust
+3,227 of 5,142 functions with a time bound measured 2026-11-26; loop bounds: 150 source-bound, 8 behavioural, 56 MIR-bound, 30 taken on trust
 
 ## Measured evidence /assurance/evidence
 
@@ -34,12 +34,12 @@ The numbers in this chart
 
 | Measure | Functions |
 |---|---|
-| functions | 5659 |
-| proven panic-free | 5101 |
+| functions | 5656 |
+| proven panic-free | 5098 |
 | proven by induction | 426 |
 | blocked | 105 |
 
-Kernel functions
+Census functions (kernel, driver, UI and file-system crates)
 
 measured 2026-10-19 from the Verus progress record (gold: verified; grey: errors)
 
@@ -62,7 +62,7 @@ The numbers in this chart
 
 Verus runs
 
-measured 2026-11-26 from the kernel WCET table (unit: MIR statements, not cycles). Loop bounds under these figures: 148 source-bound, 8 behavioural, 54 MIR-bound, 30 taken on trust; a bound taken on trust is not checked against the loop's code
+measured 2026-11-26 from the kernel WCET table (unit: MIR statements, not cycles). Loop bounds under these figures: 150 source-bound, 8 behavioural, 56 MIR-bound, 30 taken on trust; a bound taken on trust is not checked against the loop's code
 
 The numbers in this chart
 
@@ -92,8 +92,8 @@ The numbers in this chart
 | synthyrion_vmm: refused | 227 |
 | hypervisor: bounded | 205 |
 | hypervisor: refused | 138 |
-| microkernel: bounded | 2341 |
-| microkernel: refused | 1180 |
+| microkernel: bounded | 2348 |
+| microkernel: refused | 1172 |
 
 Functions per crate
 
@@ -214,8 +214,8 @@ Every figure here is read from a file of the project when this page is built, an
 | Verus models recorded verified | 6 (verified counts 43, 50, 44, 93, 24, 20; 0 errors) | 2026-10-19 | `the Verus progress record` | recorded; re-measured at the final run |
 | Verus plants (a wrong version Verus must reject) | 73 | 2026-11-27 | `the list of Verus plants` | counted |
 | Verus proof files paired with shipped code | 4 | 2026-11-27 | `the list of Verus proof copies and the shipped code they pair with` | counted |
-| Kernel-math census: functions | 5,659 | 2026-11-26 | `the census of kernel functions (totals line)` | recorded; re-measured at the final run |
-| Kernel-math census: panic-free proven | 5,101 (plus 426 by induction); 105 blocked | 2026-11-26 | `the census of kernel functions (totals line)` | recorded; re-measured at the final run |
+| Kernel-math census: functions | 5,656 | 2026-11-26 | `the kernel-math census (totals line; kernel, driver, UI and file-system crates)` | recorded; re-measured at the final run |
+| Kernel-math census: panic-free proven | 5,098 (plus 426 by induction); 105 blocked | 2026-11-26 | `the kernel-math census (totals line; kernel, driver, UI and file-system crates)` | recorded; re-measured at the final run |
 
 Proof evidence, measured
 
